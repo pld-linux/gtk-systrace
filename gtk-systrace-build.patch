@@ -1,0 +1,34 @@
+diff -urN notification-0.1.org/acconfig.h notification-0.1/acconfig.h
+--- notification-0.1.org/acconfig.h	2002-12-01 22:14:34.000000000 +0100
++++ notification-0.1/acconfig.h	2006-10-01 00:02:45.330283500 +0200
+@@ -9,12 +9,3 @@
+ #undef PACKAGE_SOURCE_DIR
+ 
+ @BOTTOM@
+-
+-#ifndef HAVE_STRLCAT
+-unsigned int strlcat(char *, const char *, unsigned int);
+-#endif
+-        
+-#ifndef HAVE_STRLCPY
+-unsigned int strlcpy(char *, const char *, unsigned int);
+-#endif
+-
+diff -urN notification-0.1.org/src/main.c notification-0.1/src/main.c
+--- notification-0.1.org/src/main.c	2003-06-22 05:58:41.000000000 +0200
++++ notification-0.1/src/main.c	2006-10-01 00:02:36.177711500 +0200
+@@ -42,6 +42,14 @@
+ #include "interface.h"
+ #include "support.h"
+ 
++#ifndef HAVE_STRLCPY
++size_t strlcpy(char *, const char *, size_t);
++#endif
++
++#ifndef HAVE_STRLCAT
++unsigned int strlcat(char *, const char *, unsigned int);
++#endif
++
+ static char home[MAXPATHLEN];		/* Home directory of user */
+ static char username[MAXLOGNAME];	/* Username: predicate match and expansion */
+ 
