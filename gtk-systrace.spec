@@ -1,5 +1,6 @@
 %define	_ver	2003-06-23
 Summary:	GTK Systrace front end invoked by systrace
+Summary(pl):	GTK Systrace - frontend wywoływany przez systrace
 Name:		gtk-systrace
 Version:	0.1
 Release:	0.%(echo %{_ver} | tr - .).1
@@ -17,6 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GTK Systrace front end invoked by systrace.
+
+%description -l pl
+GTK Systrace - frontend wywoływany przez systrace.
 
 %prep
 %setup -q -n notification-%{version}
