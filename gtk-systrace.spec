@@ -24,7 +24,7 @@ GTK Systrace - frontend wywoĹywany przez systrace.
 
 %prep
 %setup -q -n notification-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__autoheader}
